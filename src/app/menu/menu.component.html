@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <h3>Menu</h3>
+</div>
+
+<div *ngFor="let menuItem of menuItems" class="menu-box">
+  <h4>{{ menuItem.name }} <span>${{ menuItem.price }}</span></h4>
+  <p>{{ menuItem.description }}</p>
+</div>

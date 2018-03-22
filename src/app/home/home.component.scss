@@ -1,0 +1,14 @@
+a.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(255,255,255,0.75);
+    color: #333;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a.caption:hover {
+    background-color: rgba(255,255,255,0.5);
+}
