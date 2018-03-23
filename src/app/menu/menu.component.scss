@@ -1,0 +1,24 @@
+.menu-body {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  min-height: 70px;
+}
+
+.menu-body h4 {
+  margin-bottom: 5px;
+  font-size: .8rem;
+  font-weight: 500;
+  border-bottom: 1px dashed green;
+}
+
+.menu-body h4 span {
+  float: right;
+  font-weight: normal;
+}
+
+.menu-body p {
+    margin-bottom: 0;
+    color: grey;
+    font-size: .7rem;
+}

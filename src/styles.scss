@@ -29,3 +29,16 @@ main {
 .carousel-control-next {
   cursor: pointer;
 }
+
+div.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.caption h1 {
+  color: #FFF;
+  font-weight: 400;
+}

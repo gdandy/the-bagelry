@@ -1,8 +1,17 @@
-<div class="jumbotron">
-  <h3>Menu</h3>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs" style="position: relative;">
+      <img src="./assets/img/header-menu.jpg" class="img-fluid" />
+    </div>
+  </div>
 </div>
-
-<div *ngFor="let menuItem of menuItems" class="menu-box">
-  <h4>{{ menuItem.name }} <span>${{ menuItem.price }}</span></h4>
-  <p>{{ menuItem.description }}</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let menuItem of menuItems" class="menu-box col-xs-12 col-sm-6 col-lg-4">
+      <div class="menu-body">
+        <h4>{{ menuItem.name }} <span>${{ menuItem.price }}</span></h4>
+        <p>{{ menuItem.description }}</p>
+      </div>
+    </div>
+  </div>
 </div>
