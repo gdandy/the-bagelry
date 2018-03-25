@@ -1,7 +1,8 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs" style="position: relative;">
-      <img src="./assets/img/header-menu.jpg" class="img-fluid" />
+<div class="row no-gutters">
+  <div class="col-12" style="position: relative;">
+    <img src="./assets/img/header-menu.jpg" class="img-fluid w-100" />
+    <div class="caption px-4 py-2" routerLink="/menu" style="transform: translate(-50%, -50%);">
+      <h1 class="text-center">Get in my belly</h1>
     </div>
   </div>
 </div>
@@ -9,7 +10,7 @@
   <div class="row">
     <div *ngFor="let menuItem of menuItems" class="menu-box col-xs-12 col-sm-6 col-lg-4">
       <div class="menu-body">
-        <h4>{{ menuItem.name }} <span>${{ menuItem.price }}</span></h4>
+        <h4>{{ menuItem.name }} <span *ngIf="menuItem.price != null">${{ menuItem.price }}</span></h4>
         <p>{{ menuItem.description }}</p>
       </div>
     </div>

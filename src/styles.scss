@@ -1,9 +1,9 @@
-@import "~bootswatch/dist/yeti/_variables.scss";
-@import "~bootstrap/scss/bootstrap.scss";
-@import "~bootswatch/dist/yeti/_bootswatch.scss";
 
-/* Sticky footer styles
--------------------------------------------------- */
+@import "~assets/scss/custom.scss";
+@import "~bootswatch/dist/litera/_variables.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootswatch/dist/litera/_bootswatch.scss";
+
 html {
   position: relative;
   min-height: 100%;
@@ -11,18 +11,67 @@ html {
 
 body {
   /* Pad the main content for the fixed header */
-  margin-top: 6rem;
+  margin-top: 8rem;
 }
+
+/* .bg-dark {
+    background-color: #65655b !important;
+} */
+
+.navbar-dark .navbar-nav .nav-link {
+  /* color: #FFF; */
+  text-transform: uppercase;
+}
+.navbar-brand { font-size: 2rem; }
+
+/* .navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffc10b
+} */
 
 main {
   margin-bottom: 30px;
 }
 
 .footer {
+  padding: 30px 0;
+  background-color: #98a2ac;
+  color: #FFF;
+  line-height: 1.5rem;
+}
+
+.footer a {
+  color: #FFF;
+}
+.footer a:hover {
+  color: #ececec;
+  text-decoration: none;
+}
+.footer a.facebook{
+  color: #3b5998;
+}
+.footer a.facebook:hover{
+  color: #2d467b;
+}
+.footer a.instagram{
+  color: #e95950;
+}
+.footer a.instagram:hover{
+  color: #b5433c;
+}
+
+.copyrights {
   /* Set the fixed height of the footer here */
   min-height: 60px;
   line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+/*   background-color: #000;
+  color: #FFF; */
+}
+
+.copyrights a {
+  color: #3a4a5b;
+}
+.copyrights a:hover {
+  color: #24303b;
 }
 
 .carousel-control-prev,
