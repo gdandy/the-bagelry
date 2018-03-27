@@ -1,1 +1,17 @@
 $font-size-base:    1.2rem;
+
+$theme-colors: (
+  "primary":    #36c4c5,
+  //"secondary":  $secondary,
+  "success":    #01ad99,
+  "info":       #9bebcf,
+  "warning":    #ffd137,
+  "danger":     #f42257,
+/*   "light":      $light,
+  "dark":       $dark */
+);
+
+$web-font-path: "https://fonts.googleapis.com/css?family=Raleway:400,700" !default;
+@import url($web-font-path);
+
+$font-family-serif:      Georgia, Cambria, "Times New Roman", Times, serif !default;

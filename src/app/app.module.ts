@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import * as $ from 'jquery';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +14,7 @@ import { OurStoryComponent } from './our-story/our-story.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContractNavBarDirective } from './contract-nav-bar.directive';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { FooterComponent } from './footer/footer.component';
     OurStoryComponent,
     PageNotFoundComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ContractNavBarDirective
   ],
   imports: [
     BrowserModule,

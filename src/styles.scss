@@ -1,8 +1,8 @@
 
 @import "~assets/scss/custom.scss";
-@import "~bootswatch/dist/litera/_variables.scss";
+/* @import "~bootswatch/dist/litera/_variables.scss"; */
 @import "~bootstrap/scss/bootstrap.scss";
-@import "~bootswatch/dist/litera/_bootswatch.scss";
+/* @import "~bootswatch/dist/litera/_bootswatch.scss"; */
 
 html {
   position: relative;
@@ -12,6 +12,11 @@ html {
 body {
   /* Pad the main content for the fixed header */
   margin-top: 8rem;
+  min-width: 500px;
+}
+
+header > nav {
+  min-height: 110px;
 }
 
 /* .bg-dark {
@@ -28,13 +33,47 @@ body {
   color: #ffc10b
 } */
 
+@include media-breakpoint-up(md) {
+  #navbarContent > ul {
+    padding-left: 150px;
+  }
+}
+
+/* Trying to get side menu to work...
+@include media-breakpoint-down(sm) {
+    .navbar-collapse {
+        position: absolute;
+        top: 54px;
+        left: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 100%;
+    }
+    .navbar-collapse.collapsing {
+        height: auto;
+        -webkit-transition: left 0.3s ease;
+        -o-transition: left 0.3s ease;
+        -moz-transition: left 0.3s ease;
+        transition: left 0.3s ease;
+        left: -100%;
+    }
+    .navbar-collapse.show {
+        left: 0;
+        -webkit-transition: left 0.3s ease-in;
+        -o-transition: left 0.3s ease-in;
+        -moz-transition: left 0.3s ease-in;
+        transition: left 0.3s ease-in;
+    }
+} */
+
 main {
   margin-bottom: 30px;
 }
 
 .footer {
   padding: 30px 0;
-  background-color: #98a2ac;
+  background-color: rgba(36, 50, 59, 1);
   color: #FFF;
   line-height: 1.5rem;
 }
