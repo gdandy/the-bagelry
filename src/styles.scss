@@ -11,12 +11,34 @@ html {
 
 body {
   /* Pad the main content for the fixed header */
-  margin-top: 8rem;
+  /* margin-top: 8rem; */
   min-width: 500px;
+}
+
+$heading-font-path: "https://fonts.googleapis.com/css?family=Roboto+Slab:400,700";
+@import url($heading-font-path);
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Roboto Slab', serif;
 }
 
 header > nav {
   min-height: 110px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+header > nav.navbar-shrink {
+    min-height: 80px;
+    background-color: rgba(0, 0, 0, .8);
+}
+header > nav .navbar-brand {
+    position: absolute;
+    top: 10px;
+}
+header > nav.navbar-shrink .navbar-brand {
+    top: 0;
 }
 
 /* .bg-dark {
@@ -34,9 +56,38 @@ header > nav {
 } */
 
 @include media-breakpoint-up(md) {
-  #navbarContent > ul {
-    padding-left: 150px;
+  #navbarContent {
+    padding-left: 180px;
   }
+}
+
+.masthead {
+  text-align: center;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+.masthead.home {
+  background-image: url(./assets/img/header/home-alt.jpg)
+}
+.masthead.local {
+  background-image: url(./assets/img/header/local-alt.jpg)
+}
+.masthead.address {
+  background-image: url(./assets/img/header/address-alt.jpg)
+}
+.masthead.menu {
+  background-image: url(./assets/img/header/menu-alt.jpg)
+}
+
+.masthead.our-story {
+  background-image: url(./assets/img/header/our-story-alt.jpg)
+}
+.masthead-content {
+  padding-top: 300px;
+  padding-bottom: 200px;
 }
 
 /* Trying to get side menu to work...
@@ -79,10 +130,10 @@ main {
 }
 
 .footer a {
-  color: #FFF;
+  color: #36c4c5;
 }
 .footer a:hover {
-  color: #ececec;
+  color: #268889;
   text-decoration: none;
 }
 .footer a.facebook{
@@ -102,15 +153,15 @@ main {
   /* Set the fixed height of the footer here */
   min-height: 60px;
   line-height: 60px; /* Vertically center the text there */
-/*   background-color: #000;
-  color: #FFF; */
+  background-color: #161616;
+  color: #FFF;
 }
 
 .copyrights a {
-  color: #3a4a5b;
+  color: #36c4c5;
 }
 .copyrights a:hover {
-  color: #24303b;
+  color: #268889;
 }
 
 .carousel-control-prev,
