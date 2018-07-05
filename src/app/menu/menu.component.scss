@@ -1,23 +1,44 @@
-.menu-body {
-  margin: 10px 0;
-  min-height: 70px;
+.menu-category-header {
+  background-color: #bc9b28;
+  color: #503228 !important;
 }
 
-.menu-body h4 {
+.menu-subcategory {
+  margin-bottom: 1.5rem;
+}
+
+.menu-subcategory > h5 {
+  color: #bc9922;
+  border-bottom: 1px solid #bc9922;
+  margin-bottom: .75rem;
+}
+
+.menu-subcategory-price {
+  color: grey;
+  font-size: .9rem;
+}
+
+.menu-item {
+  border-bottom: 1px solid rgba(0, 213, 192, 0.25);
+}
+
+.menu-item-body {
+  margin: 10px 0;
+}
+
+.menu-item-body h4 {
   margin-bottom: 5px;
   font-size: .9rem;
   font-weight: 500;
-  text-transform: uppercase;
-  border-bottom: 1px dashed green;
 }
 
-.menu-body h4 span {
+.menu-item-body h4 span {
   float: right;
   font-weight: normal;
 }
 
-.menu-body p {
-    margin-bottom: 0;
-    color: grey;
-    font-size: .7rem;
+.menu-item-body p {
+  margin-bottom: 0;
+  color: grey;
+  font-size: .8rem;
 }

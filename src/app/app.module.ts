@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
+import { routerTransition } from './router.animations';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,7 +16,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContractNavBarDirective } from './contract-nav-bar.directive';
-
 
 @NgModule({
   declarations: [
@@ -34,16 +34,12 @@ import { ContractNavBarDirective } from './contract-nav-bar.directive';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent },
-      { path: 'menu', component: MenuComponent },
-      { path: 'address', component: AddressComponent },
-      { path: 'local', component: LocalComponent },
-      { path: 'our-story', component: OurStoryComponent },
-      {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
-      },
+      { path: 'home', component: HomeComponent, data: { state: 'home' } },
+      { path: 'menu', component: MenuComponent, data: { state: 'menu' } },
+      { path: 'address', component: AddressComponent, data: { state: 'address' } },
+      { path: 'local', component: LocalComponent, data: { state: 'local' } },
+      { path: 'our-story', component: OurStoryComponent, data: { state: 'our-story' } },
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent }
     ]),
     NgbModule.forRoot()
