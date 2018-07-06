@@ -68,6 +68,7 @@ header > nav.navbar-shrink .navbar-brand {
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
 }
 .masthead.home {
   background-image: url(./assets/img/header/home-alt.jpg)
@@ -123,11 +124,21 @@ main {
   margin-bottom: 30px;
 }
 
+.box-shadow {
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+}
+
+.content-area-alt {
+  background-color: #24323b;
+  color: white;
+}
+
 .footer {
   padding: 30px 0;
   background-color: rgba(36, 50, 59, 1);
   color: #FFF;
   line-height: 1.5rem;
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
 }
 
 .footer a {

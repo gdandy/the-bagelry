@@ -14,7 +14,7 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-3 d-print-none">
-      <div id="list-example" class="list-group">
+      <div id="list-example" class="list-group box-shadow">
         <a class="list-group-item disabled menu-category-header">Menu</a>
         <a *ngFor="let categoryName of allCategoryNames" class="list-group-item list-group-item-action list-group-item-primary" [class.active]="categoryName == activeCategoryName" href="#" (click)="setActive(categoryName)">
            <small>{{ categoryName }}</small>
