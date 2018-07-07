@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { routerTransition } from './router.animations';
 
 @Component({
@@ -7,10 +7,14 @@ import { routerTransition } from './router.animations';
   styleUrls: ['./app.component.scss'],
   animations: [routerTransition]
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'The Bagelry';
 
   getState(outlet) {
     return outlet.activatedRouteData.state;
+  }
+
+  ngAfterViewInit() {
+    // $('#myModal').modal({ show: true })
   }
 }

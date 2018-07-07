@@ -12,6 +12,10 @@ export class AddressComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.initializeMap();
+  }
+
+  initializeMap() {
     // Create a new StyledMapType object, passing it an array of styles,
     // and the name to be displayed on the map type control.
     const styledMapType = new google.maps.StyledMapType(
@@ -146,16 +150,46 @@ export class AddressComponent implements OnInit {
       ],
       { name: 'Styled Map' });
 
-    const mapProp = {
+    const mapOptions = {
       center: new google.maps.LatLng(39.69243591319713, -105.35755360000002),
       zoom: 18,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+
+    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapOptions);
 
     // Associate the styled map with the MapTypeId and set it to display
     this.map.mapTypes.set('styled_map', styledMapType);
     this.map.setMapTypeId('styled_map');
+
+    const request = {
+      placeId: 'ChIJQzb3SyqZa4cR5bt3Os6IeBc',
+      fields: ['name', 'formatted_address', 'formatted_phone_number', 'rating', 'geometry'],
+    };
+    const infowindow = new google.maps.InfoWindow();
+    const service = new google.maps.places.PlacesService(this.map);
+    const mapRef = this.map;
+
+    service.getDetails(request, function (place, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        const marker = new google.maps.Marker({
+          map: mapRef,
+          position: place.geometry.location
+        });
+
+        infowindow.setContent('<div class="text-left"><strong>' + place.name + '</strong><br>' +
+          place.formatted_address + '<br>' +
+          place.formatted_phone_number + '<br>' +
+          'Rating: <em>' + place.rating + '</em><br>' +
+          '<a href="https://maps.google.com/maps?ll=39.692444,-105.357233&z=18&hl=en-US&gl=US&mapclient=apiv3&cid=1691252079403187173"' +
+          ' target="_blank">View on Google Maps</a></div>');
+
+        google.maps.event.addListener(marker, 'click', function () {
+          infowindow.open(mapRef, this);
+        });
+
+        infowindow.open(mapRef, marker);
+      }
+    });
   }
 }

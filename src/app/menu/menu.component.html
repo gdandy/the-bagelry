@@ -7,14 +7,10 @@
   </div>
 </div>
 
-<div class="d-none d-print-block">
-  <h3>The Bagelry Menu</h3>
-</div>
-
-<div class="container">
+<div class="container d-print-none">
   <div class="row mt-5">
-    <div class="col-3 d-print-none">
-      <div id="list-example" class="list-group box-shadow">
+    <div class="col-3">
+      <div id="menuNav" class="list-group box-shadow">
         <a class="list-group-item disabled menu-category-header">Menu</a>
         <a *ngFor="let categoryName of allCategoryNames" class="list-group-item list-group-item-action list-group-item-primary" [class.active]="categoryName == activeCategoryName" href="#" (click)="setActive(categoryName)">
            <small>{{ categoryName }}</small>
@@ -32,6 +28,39 @@
               <p *ngIf="item.description">{{ item.description }}</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container d-none d-print-block mb-3">
+  <div class="row">
+    <div class="col-8">
+      <img src="./assets/img/logo/the-bagelry-md.jpg" />
+    </div>
+    <div class="col-4">
+      <p><strong>Hours:</strong><br />
+      MONDAY - SUNDAY 6AM - 4PM</p>
+      <p><strong>Address:</strong><br />
+      1242 Bergen Parkway<br />
+      Evergreen, CO 80439<br />
+      303-674-1413</p>
+    </div>
+  </div>
+</div>
+
+<div class="container d-none d-print-block">
+  <div class="row" *ngFor="let category of allCategories">
+    <div *ngFor="let subCategory of category.subCategories" class="menu-subcategory col-6" [class.page-break]="subCategory.shouldPageBreakBefore">
+      <h5>{{ subCategory.name }}</h5>
+      <p *ngIf="subCategory.priceString" class="menu-subcategory-price">{{ subCategory.priceString }}</p>
+      <div *ngFor="let item of subCategory.items" class="menu-item">
+        <div class="menu-item-body">
+          <h4>{{ item.name }}
+            <span *ngIf="item.price != null">${{ item.price }}</span>
+          </h4>
+          <p *ngIf="item.description">{{ item.description }}</p>
         </div>
       </div>
     </div>

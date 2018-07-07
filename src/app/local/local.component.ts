@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./local.component.scss']
 })
 export class LocalComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
   }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MenuCategory, MenuSubCategory, MenuItem } from './menu-objects';
 
 @Component({
@@ -6,7 +6,7 @@ import { MenuCategory, MenuSubCategory, MenuItem } from './menu-objects';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, AfterViewInit {
   allCategories: Array<MenuCategory>;
   allCategoryNames: Array<string>;
   activeCategoryName: string;
@@ -98,7 +98,7 @@ export class MenuComponent implements OnInit {
           new MenuItem('Pizza Bagel', 'Pepperoni, mozzarella & sauce', 6.29),
           new MenuItem('Ham & Cheese', 'Ham & cheddar', 7.49),
           new MenuItem('BLT', 'Bacon, lettuce & tomato', 6.79)
-        ]),
+        ], true),
         new MenuSubCategory('Lunch Wraps & Others', null, [
           new MenuItem('California Turkey', 'Turkey, cheddar, avocado, lettuce & tomato', 8.49),
           new MenuItem('Spicy Chicken Salad', 'Homemade chicken salad, pepperjack, lettuce & tomato', 8.49),
@@ -134,7 +134,7 @@ export class MenuComponent implements OnInit {
           new MenuItem('Freshly Brewed Coffee', 'Sm $1.89 / Md $2.09 / Lg $2.29'),
           new MenuItem('Box of Fresh Brewed Coffee', '$18.99 and contains 8-10 cups'),
           new MenuItem('Espresso', 'One shot $1.39 / Two shots $2.09'),
-        ]),
+        ], true),
         new MenuSubCategory('Smoothies & Frozen Drinks', 'Sm $4.39 / Md $4.79 / Lg $5.39', [
           new MenuItem('Banana Cream'),
           new MenuItem('Coconut Cream'),
@@ -171,5 +171,28 @@ export class MenuComponent implements OnInit {
 
     this.activeCategoryName = 'All';
     this.activeCategories = this.allCategories;
+  }
+
+  ngAfterViewInit() {
+    const menuNav = $('#menuNav');
+
+    $(window).scroll(function () {
+      const scroll = $(window).scrollTop();
+
+      // Make food menu navigation sticky and same width when scrolling
+      const currentMenuWidth = menuNav.width();
+
+      if (scroll >= 550) {
+        if (!menuNav.hasClass('sticky')) {
+          menuNav.addClass('sticky');
+          menuNav.width(currentMenuWidth);
+        }
+      } else {
+        if (menuNav.hasClass('sticky')) {
+          menuNav.removeClass('sticky');
+          menuNav.width('auto');
+        }
+      }
+    });
   }
 }

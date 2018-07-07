@@ -9,7 +9,8 @@ export class MenuSubCategory {
     constructor(
         public name: string,
         public priceString: string,
-        public items: Array<MenuItem>) { }
+        public items: Array<MenuItem>,
+        public shouldPageBreakBefore: boolean = false) { }
 }
 
 export class MenuItem {

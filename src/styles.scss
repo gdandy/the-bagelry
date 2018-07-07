@@ -1,8 +1,6 @@
 
 @import "~assets/scss/custom.scss";
-/* @import "~bootswatch/dist/litera/_variables.scss"; */
 @import "~bootstrap/scss/bootstrap.scss";
-/* @import "~bootswatch/dist/litera/_bootswatch.scss"; */
 
 html {
   position: relative;
@@ -29,6 +27,13 @@ header > nav {
   transition: all 0.5s ease;
 }
 
+header > nav .nav-brand-xs {
+    position: absolute; left: 50%; top: 10px; width: 160px; height: 70px;transform: translateX(-50%);
+}
+header > nav.navbar-shrink .nav-brand-xs {
+    top: 3px;
+}
+
 header > nav.navbar-shrink {
     min-height: 80px;
     background-color: rgba(0, 0, 0, .8);
@@ -41,19 +46,10 @@ header > nav.navbar-shrink .navbar-brand {
     top: 0;
 }
 
-/* .bg-dark {
-    background-color: #65655b !important;
-} */
-
 .navbar-dark .navbar-nav .nav-link {
-  /* color: #FFF; */
   text-transform: uppercase;
 }
 .navbar-brand { font-size: 2rem; }
-
-/* .navbar-dark .navbar-nav .nav-link:hover {
-  color: #ffc10b
-} */
 
 @include media-breakpoint-up(md) {
   #navbarContent {
@@ -91,36 +87,8 @@ header > nav.navbar-shrink .navbar-brand {
   padding-bottom: 200px;
 }
 
-/* Trying to get side menu to work...
-@include media-breakpoint-down(sm) {
-    .navbar-collapse {
-        position: absolute;
-        top: 54px;
-        left: 0;
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 15px;
-        width: 100%;
-    }
-    .navbar-collapse.collapsing {
-        height: auto;
-        -webkit-transition: left 0.3s ease;
-        -o-transition: left 0.3s ease;
-        -moz-transition: left 0.3s ease;
-        transition: left 0.3s ease;
-        left: -100%;
-    }
-    .navbar-collapse.show {
-        left: 0;
-        -webkit-transition: left 0.3s ease-in;
-        -o-transition: left 0.3s ease-in;
-        -moz-transition: left 0.3s ease-in;
-        transition: left 0.3s ease-in;
-    }
-} */
-
 main {
-  min-height: 600px;
+  min-height: 1400px; // Large enough so footer doesn't show during page transision
   margin-bottom: 30px;
 }
 
@@ -129,8 +97,13 @@ main {
 }
 
 .content-area-alt {
-  background-color: #24323b;
+  background-color: #81baa4;
   color: white;
+}
+
+.btn-xl {
+  padding: 0.75rem 1.25rem;
+  font-size: 1.75rem;
 }
 
 .footer {

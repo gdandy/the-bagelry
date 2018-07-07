@@ -1,6 +1,13 @@
+#menuNav.sticky {
+  position: fixed;
+  top: 135px;
+}
+
 .menu-category-header {
-  background-color: #bc9b28;
-  color: #503228 !important;
+  background-color: #8acab0;
+  color: white !important;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .menu-subcategory {
@@ -8,8 +15,8 @@
 }
 
 .menu-subcategory > h5 {
-  color: #bc9922;
-  border-bottom: 1px solid #bc9922;
+  color: #79a483;
+  border-bottom: 1px solid #79a483;
   margin-bottom: .75rem;
 }
 
@@ -41,4 +48,16 @@
   margin-bottom: 0;
   color: grey;
   font-size: .8rem;
+}
+
+@media all {
+.page-break { display: none; }
+}
+
+@media print {
+.page-break { display: block; page-break-before: always; }
+}
+
+.d-print-block .menu-item-body {
+  margin: 5px 0;
 }

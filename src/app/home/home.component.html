@@ -3,58 +3,70 @@
     <div class="masthead-content">
       <h4>Welcome to The Bagelry!</h4>
       <h1 class="text-uppercase">Baked fresh daily</h1>
-      <a class="btn btn-danger btn-lg text-white mt-4 box-shadow" routerLink="/menu">See our Menu</a>
+      <a class="btn btn-danger btn-xl text-white mt-4 box-shadow" routerLink="/menu">See our Menu</a>
     </div>
   </div>
 </div>
 <div class="container">
-  <div class="row my-3">
+  <div class="row my-5">
     <div class="col-12">
      <h3 class="text-center"><em>Bagels with Altitude</em></h3>
-     <h5 class="text-center">Evergreen, CO - Elev. 7600</h5>
+     <h5 class="text-center">Evergreen, CO - Elev. 7,600 ft</h5>
+     <p class="lead mt-4">The Bagelry, <em>best bagels</em> in Colorado...<em>period</em>. We bake our bagels daily and whip our own shmear.  Our breakfast sandwiches are extra delicious or try a wrap while enjoying our full service coffee bar. Home of the mountain power bagel!</p>
     </div>
   </div>
-  <div class="row my-3">
-    <div class="col-12 col-sm-6">
-      <img src="./assets/img/quotes-keep-calm.jpg" class="img-fluid" />
-    </div>
-    <div class="col-12 col-sm-6">
-      <div *ngIf="images" id="carouselHighlights" class="carousel slide" data-ride="carousel" data-interval="4000">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" [src]="images[0].src" [alt]="images[0].altText">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" [src]="images[1].src" [alt]="images[0].altText">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" [src]="images[2].src" [alt]="images[0].altText">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" [src]="images[3].src" [alt]="images[0].altText">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselHighlights" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselHighlights" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+</div>
+<div class="container-fluid box-shadow content-area-alt">
+  <div class="container">
+    <div class="row py-5">
+      <div class="col-12 col-sm-6 mb-5 mb-sm-0">
+        <img src="./assets/img/quotes-keep-calm.jpg" class="img-fluid box-shadow" />
       </div>
-
-      <blockquote class="blockquote text-right">
-        <p class="mb-0">A bagel is a doughnut with the sin removed.</p>
-        <footer class="blockquote-footer">George Rosenbaum
-        </footer>
-      </blockquote>
+      <div class="col-12 col-sm-6">
+        <div *ngIf="carouselImages" id="carouselHighlights" class="carousel slide box-shadow" data-ride="carousel" data-interval="4000">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselIndicators" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" [src]="carouselImages[0].src" [alt]="carouselImages[0].altText">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" [src]="carouselImages[1].src" [alt]="carouselImages[0].altText">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" [src]="carouselImages[2].src" [alt]="carouselImages[0].altText">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" [src]="carouselImages[3].src" [alt]="carouselImages[0].altText">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselHighlights" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselHighlights" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    
+        <blockquote class="blockquote text-right">
+          <p class="mb-0">A bagel is a doughnut with the sin removed.</p>
+          <footer class="blockquote-footer">George Rosenbaum
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row my-5 justify-content-center">
+    <div class="col-4" *ngFor="let image of filterImageRollImages">
+      <img src="{{image.src}}" title="{{image.altText}}" class="img-fluid m-4">
     </div>
   </div>
 </div>

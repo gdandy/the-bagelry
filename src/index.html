@@ -11,7 +11,6 @@
   <meta name="classification" content="restaurant and cafe">
   <meta name="subject" content="restaurant and cafe">
   <meta name="author" content="downtownandybrown.com">
-  <meta name="google-site-verification" content="ZzU46QXOhj87coYF3goViaM-EvN82U2KcSA3pJcf34Q" />
   <title>The Bagelry - Baking amazing bagels since 1995</title>
   <base href="/">
   <!-- <base href="/_workshop/thebagelry/"> -->
@@ -25,21 +24,22 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAAacTILKQOQPRAP47BcnG0tVt-cp8_bIg"></script>
   <script>
     $(function () {
-        //caches a jQuery object containing the header element
-        var navbar = $("nav.navbar");
-        $(window).scroll(function () {
-          var scroll = $(window).scrollTop();
+      var navbar = $('nav.navbar');
 
-          if (scroll >= 100) {
-            navbar.addClass('navbar-shrink');
-          } else {
-            navbar.removeClass("navbar-shrink");
-          }
-        });
+      $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        
+        // Make navbar shrink when scrolling down
+        if (scroll >= 100) {
+          navbar.addClass('navbar-shrink');
+        } else {
+          navbar.removeClass("navbar-shrink");
+        }
       });
+    });
   </script>
 </body>
 </html>
