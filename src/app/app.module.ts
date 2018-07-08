@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContractNavBarDirective } from './contract-nav-bar.directive';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ContractNavBarDirective } from './contract-nav-bar.directive';
     PageNotFoundComponent,
     NavbarComponent,
     FooterComponent,
-    ContractNavBarDirective
+    ContractNavBarDirective,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,8 @@ import { ContractNavBarDirective } from './contract-nav-bar.directive';
       { path: 'address', component: AddressComponent, data: { state: 'address' } },
       { path: 'local', component: LocalComponent, data: { state: 'local' } },
       { path: 'our-story', component: OurStoryComponent, data: { state: 'our-story' } },
+      { path: 'events', component: EventsComponent, data: { state: 'events' } },
+      { path: 'bagelmania', component: EventsComponent, data: { state: 'bagelmania' } },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent }
     ]),
