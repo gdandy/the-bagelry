@@ -14,6 +14,10 @@ export class AppComponent implements AfterViewInit {
     return outlet.activatedRouteData.state;
   }
 
+  onDeactivate() {
+    window.scrollTo(0, 0);
+  }
+
   ngAfterViewInit() {
     // $('#myModal').modal({ show: true })
   }

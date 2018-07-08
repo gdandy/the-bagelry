@@ -8,9 +8,16 @@
             <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
             <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
           </conditions>
-          <action type="Rewrite" url="/" />
+          <action type="Rewrite" url="/_hosted_sites/thebagelry/" />
         </rule>
       </rules>
     </rewrite>
+
+    <staticContent>
+      <remove fileExtension=".woff" /> <!-- In case IIS already has this mime type -->
+      <mimeMap fileExtension=".woff" mimeType="font/woff" />
+      <remove fileExtension=".woff2" /> <!-- In case IIS already has this mime type -->
+      <mimeMap fileExtension=".woff2" mimeType="font/woff2" />
+    </staticContent>
   </system.webServer>
 </configuration>

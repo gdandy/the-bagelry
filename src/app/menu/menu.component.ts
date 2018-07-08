@@ -21,6 +21,10 @@ export class MenuComponent implements OnInit, AfterViewInit {
       ? this.allCategories
       : this.allCategories.filter(category => category.name === this.activeCategoryName);
 
+    // Scroll to the top of the menu when it is changed
+    const menuItemsTop = $('#menuItems').offset().top - 138;
+    window.scrollTo(0, menuItemsTop);
+
     return false;
   }
 

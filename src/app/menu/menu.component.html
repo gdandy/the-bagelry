@@ -17,7 +17,7 @@
         </a>
       </div>
     </div>
-    <div class="col-9 col-md-6">
+    <div class="col-9 col-md-6" id="menuItems">
       <div *ngFor="let category of activeCategories">
         <div *ngFor="let subCategory of category.subCategories" class="menu-subcategory">
           <h5>{{ subCategory.name }}</h5>
