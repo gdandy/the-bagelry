@@ -114,15 +114,6 @@ export class MenuComponent implements OnInit, AfterViewInit {
           new MenuItem('Extra Cheese or Avocado', null, .79),
           new MenuItem('Add Bacon', null, .99),
           new MenuItem('Add Veggies', null, .49)
-        ]),
-        new MenuSubCategory('Salads', null, [
-          new MenuItem('Bagelry House Salad', 'Mixed greens, dried cranberries, walnuts, apple & blue cheese', 6.99),
-          new MenuItem('California Turkey Salad',
-            'Mixed greens, turkey, avocado, blue cheese, tomato, cucumbers, sprouts', 8.69),
-          new MenuItem('Chef Salad', 'Mixed greens, turkey, ham, cheddar & veggies', 7.59),
-          new MenuItem('Tuna, Chicken, or Egg Salad', 'Mixed greens, homemade tuna, chicken, or egg salad & provolone', 7.59),
-          new MenuItem('Garden Veggie Salad', 'Mixed greens & assorted fresh veggies', 6.59),
-          new MenuItem('House Side Salad', null, 1.99),
         ])
       ]),
       new MenuCategory('Drinks', null, [
@@ -179,6 +170,9 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     const menuNav = $('#menuNav');
+    const menuNavParent = $('#menuNav').parent();
+    const menuNavHeight = $('footer').height();
+    const footer = $('footer');
 
     $(window).scroll(function () {
       const scroll = $(window).scrollTop();
@@ -186,15 +180,31 @@ export class MenuComponent implements OnInit, AfterViewInit {
       // Make food menu navigation sticky and same width when scrolling
       const currentMenuWidth = menuNav.width();
 
+      // Whe scrolled past the starting position of the menu navigation
       if (scroll >= 550) {
+        const footerTop = footer.offset().top;
+
+        // Prevent hovering over the footer so remove sticky positioning and align to bottom of column
+        // if (scroll + menuNavHeight - 150 > footerTop) {
+        //   menuNav.removeClass('sticky');
+        //   menuNavParent.addClass('mt-auto');
+        //   menuNav.width('auto');
+        // } else
         if (!menuNav.hasClass('sticky')) {
           menuNav.addClass('sticky');
+          menuNavParent.removeClass('mt-auto');
           menuNav.width(currentMenuWidth);
         }
       } else {
+        // Ensure the sticky positioning is removed and back to automatic width
         if (menuNav.hasClass('sticky')) {
           menuNav.removeClass('sticky');
           menuNav.width('auto');
+        }
+
+        // Ensure the menuNav alignment to bottom of column is removed
+        if (menuNavParent.hasClass('mt-auto')) {
+          menuNavParent.removeClass('mt-auto');
         }
       }
     });
