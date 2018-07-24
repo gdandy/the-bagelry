@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.allCategories = [
       new MenuCategory('Bagels + Shmears', null, [
-        new MenuSubCategory('Bagels', null, [
+        new MenuSubCategory('Bagels', 'Bagelry Dozen (14) $11.79 / Half Dozen (6) $5.89 / Each $1.19', [
           new MenuItem('Blueberry'),
           new MenuItem('Cinnamon Raisin'),
           new MenuItem('Cranberry Walnut'),
@@ -48,7 +48,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
           new MenuItem('Wheat'),
           new MenuItem('Baker\'s Special')
         ]),
-        new MenuSubCategory('Whipped Cream Cheese Shmears', null, [
+        new MenuSubCategory('Whipped Cream Cheese Shmears', 'Shmear Tub $4.69', [
           new MenuItem('Chive'),
           new MenuItem('Garlic & Herb'),
           new MenuItem('Honey Walnut Raisin'),
@@ -58,6 +58,10 @@ export class MenuComponent implements OnInit, AfterViewInit {
           new MenuItem('Plain'),
           new MenuItem('Jalapeno'),
           new MenuItem('Strawberry')
+        ]),
+        new MenuSubCategory('Specials', null, [
+          new MenuItem('Bagelry Dozen (14) & 2 shmears', null, 17.99),
+          new MenuItem('Bagelry Half Dozen (6) & 1 shmear', null, 9.99)
         ])
       ]),
       new MenuCategory('Breakfast', null, [
@@ -98,9 +102,8 @@ export class MenuComponent implements OnInit, AfterViewInit {
           new MenuItem('Bergen Peak', 'Lox, cream cheese, tomato, red onion & capers', 8.99),
           new MenuItem('Pikes Peak Reuben', 'Corned beef, swiss, sauerkraut & dressing', 8.99),
           new MenuItem('Bagelry Tuna Melt', 'Homemade tuna salad, provolone, tomato & onion', 8.99),
-          new MenuItem('Veggie Melt', 'All the veggies & swiss (served open face)', 7.49),
+          new MenuItem('The Melt', 'Your choice of meat and cheese', 5.99),
           new MenuItem('Pizza Bagel', 'Pepperoni, mozzarella & sauce', 6.29),
-          new MenuItem('Ham & Cheese', 'Ham & cheddar', 7.49),
           new MenuItem('BLT', 'Bacon, lettuce & tomato', 6.79)
         ], true),
         new MenuSubCategory('Lunch Wraps & Others', null, [

@@ -50,6 +50,13 @@
   font-size: .8rem;
 }
 
+@media (max-width: 770px) {
+  #menuNav .list-group-item {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+}
+
 @media all {
 .page-break { display: none; }
 }
