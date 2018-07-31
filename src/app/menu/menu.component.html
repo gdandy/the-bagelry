@@ -9,7 +9,7 @@
 
 <div class="container d-print-none">
   <div class="row mt-5">
-    <div class="col-3">
+    <div class="col-3 pr-0 pr-md-3">
       <div id="menuNav" class="list-group box-shadow">
         <a class="list-group-item disabled menu-category-header">Menu</a>
         <a *ngFor="let categoryName of allCategoryNames" class="list-group-item list-group-item-action list-group-item-primary" [class.active]="categoryName == activeCategoryName" href="#" (click)="setActive(categoryName)">

@@ -172,28 +172,30 @@ export class MenuComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const menuNav = $('#menuNav');
-    const menuNavParent = $('#menuNav').parent();
-    const menuNavHeight = $('footer').height();
-    const footer = $('footer');
-
     $(window).scroll(function () {
       const scroll = $(window).scrollTop();
+      const menuNav = $('#menuNav');
+      const menuNavParent = $('#menuNav').parent();
+      const menuNavHeight = $('footer').height();
 
       // Make food menu navigation sticky and same width when scrolling
       const currentMenuWidth = menuNav.width();
 
       // Whe scrolled past the starting position of the menu navigation
       if (scroll >= 550) {
-        const footerTop = footer.offset().top;
+        const footerTop = $('footer').offset().top;
+        const computed = scroll + menuNavHeight - 150;
+
+        // TESTING:
+        // $('#windowTest').html('computed: ' + computed + '<br />footerTop: ' + footerTop + '<br />scroll: ' + scroll +
+        //   '<br />menuNavHeight: ' + menuNavHeight);
 
         // Prevent hovering over the footer so remove sticky positioning and align to bottom of column
-        // if (scroll + menuNavHeight - 150 > footerTop) {
-        //   menuNav.removeClass('sticky');
-        //   menuNavParent.addClass('mt-auto');
-        //   menuNav.width('auto');
-        // } else
-        if (!menuNav.hasClass('sticky')) {
+        if (scroll + menuNavHeight - 150 > footerTop) {
+          menuNav.removeClass('sticky');
+          menuNavParent.addClass('mt-auto');
+          menuNav.width('auto');
+        } else if (!menuNav.hasClass('sticky')) {
           menuNav.addClass('sticky');
           menuNavParent.removeClass('mt-auto');
           menuNav.width(currentMenuWidth);

@@ -7,12 +7,6 @@ html {
   min-height: 100%;
 }
 
-body {
-  /* Pad the main content for the fixed header */
-  /* margin-top: 8rem; */
-  min-width: 500px;
-}
-
 $heading-font-path: "https://fonts.googleapis.com/css?family=Roboto+Slab:400,700";
 @import url($heading-font-path);
 
@@ -34,7 +28,7 @@ header > nav.navbar-shrink .nav-brand-xs {
     top: 3px;
 }
 
-header > nav.navbar-shrink {
+header > nav.navbar-shrink, header > nav.mobile-opened {
     min-height: 80px;
     background-color: rgba(0, 0, 0, .8);
 }
@@ -83,8 +77,15 @@ header > nav.navbar-shrink .navbar-brand {
   background-image: url(./assets/img/header/our-story-alt.jpg)
 }
 .masthead-content {
-  padding-top: 300px;
-  padding-bottom: 200px;
+  padding-top: 175px;
+  padding-bottom: 175px;
+}
+
+@include media-breakpoint-up(md) {
+  .masthead-content {
+    padding-top: 300px;
+    padding-bottom: 200px;
+  }
 }
 
 main {

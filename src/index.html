@@ -27,16 +27,25 @@
   <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAAacTILKQOQPRAP47BcnG0tVt-cp8_bIg"></script>
   <script>
     $(function () {
-      var navbar = $('nav.navbar');
+      var $navbar = $('nav.navbar');
+
+      // Add mobile-opened class to navbar when its expanded during small views.  This way it displays a background color when opened even at the top.
+      $navbar.on('show.bs.collapse', function () {
+        $navbar.addClass('mobile-opened');
+      });
+
+      $navbar.on('hide.bs.collapse', function () {
+        $navbar.removeClass('mobile-opened');
+      });
 
       $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         
         // Make navbar shrink when scrolling down
         if (scroll >= 100) {
-          navbar.addClass('navbar-shrink');
+          $navbar.addClass('navbar-shrink');
         } else {
-          navbar.removeClass("navbar-shrink");
+          $navbar.removeClass("navbar-shrink");
         }
       });
     });

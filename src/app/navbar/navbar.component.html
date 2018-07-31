@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-md fixed-top navbar-dark">
     <div class="container">
-      <a routerLink="/home" class="d-block d-md-none nav-brand-xs">
+      <a routerLink="/home" class="d-block d-md-none nav-brand-xs" appContractNavBar>
         <img src="./assets/img/logo/the-bagelry-sm-white.png" title="The Bagelry" />
       </a>
       <a class="navbar-brand d-none d-md-block" routerLink="" appContractNavBar>
@@ -12,6 +12,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item d-md-none" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home" appContractNavBar>Home</a>
+          </li>
           <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" routerLink="/menu" appContractNavBar>Menu</a>
           </li>
