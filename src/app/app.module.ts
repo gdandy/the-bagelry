@@ -2,9 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import * as $ from 'jquery';
-import { routerTransition } from './router.animations';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -45,8 +43,7 @@ import { EventsComponent } from './events/events.component';
       { path: 'bagelmania', component: EventsComponent, data: { state: 'bagelmania' } },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent }
-    ]),
-    NgbModule.forRoot()
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
