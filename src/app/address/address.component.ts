@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./address.component.scss']
 })
 export class AddressComponent implements OnInit {
-  @ViewChild('gmap') gmapElement: any;
+  @ViewChild('gmap', { static: true }) gmapElement: any;
   map: google.maps.Map;
 
   constructor() { }
