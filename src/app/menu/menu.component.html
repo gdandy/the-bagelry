@@ -9,12 +9,6 @@
 
 <div class="container d-print-none">
   <div class="row mt-4">
-    <div class="mr-auto ml-auto">
-      <a class="btn btn-danger btn-xl text-white box-shadow mr-2" href="https://us.orderspoon.com/the-bagelry" target="_blank">Order for Pickup</a>
-      <a class="btn btn-success btn-xl text-white box-shadow ml-2" href="https://catering.orderspoon.com/the-bagelry" target="_blank">Order Catering</a>
-    </div>
-  </div>
-  <div class="row mt-4">
     <div class="col-3 pr-0 pr-md-3">
       <div id="menuNav" class="list-group box-shadow">
         <a class="list-group-item disabled menu-category-header">Menu</a>
@@ -24,6 +18,11 @@
       </div>
     </div>
     <div class="col-9 col-md-6" id="menuItems">
+      <div>
+        <a class="btn btn-primary btn-sm text-white box-shadow mb-2 mr-2" href="https://catering.orderspoon.com/the-bagelry" target="_blank">Donation Sandwich</a>
+        <a class="btn btn-danger btn-sm text-white box-shadow mb-2 mr-2" href="https://us.orderspoon.com/the-bagelry" target="_blank">Order for Pickup</a>
+        <a class="btn btn-success btn-sm text-white box-shadow mb-2" href="https://catering.orderspoon.com/the-bagelry" target="_blank">Order Catering</a>
+      </div>
       <div *ngFor="let category of activeCategories">
         <div *ngFor="let subCategory of category.subCategories" class="menu-subcategory">
           <h5>{{ subCategory.name }}</h5>
