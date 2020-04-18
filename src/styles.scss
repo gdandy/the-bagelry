@@ -77,13 +77,13 @@ header > nav.navbar-shrink .navbar-brand {
   background-image: url(./assets/img/header/our-story-alt.jpg)
 }
 .masthead-content {
-  padding-top: 175px;
-  padding-bottom: 175px;
+  padding-top: 125px;
+  padding-bottom: 125px;
 }
 
 @include media-breakpoint-up(md) {
   .masthead-content {
-    padding-top: 300px;
+    padding-top: 200px;
     padding-bottom: 200px;
   }
 }
