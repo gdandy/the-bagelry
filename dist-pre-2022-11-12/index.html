@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="The Bagelry is a bagel bakery, sandwich, and coffee shop in Evergreen Colorado.">
+  <meta name="keywords" content="bagel, bagels, coffee, healthy, evergreen, colorado, wifi, breakfast, lunch, restaurant">
+  <meta name="robots" content="all">
+  <meta name="rating" content="general">
+  <meta name="distribution" content="global">
+  <meta name="classification" content="restaurant and cafe">
+  <meta name="subject" content="restaurant and cafe">
+  <meta name="author" content="downtownandybrown.com">
+  <title>The Bagelry - Baking amazing bagels since 1995</title>
+  <base href="/">
+  <!-- <base href="/_workshop/thebagelry/"> -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+  <app-root><h4 class="text-center mt-5">Loading something awesome...</h4></app-root>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAAacTILKQOQPRAP47BcnG0tVt-cp8_bIg"></script>
+  <script>
+    $(function () {
+      var $navbar = $('nav.navbar');
+
+      // Add mobile-opened class to navbar when its expanded during small views.  This way it displays a background color when opened even at the top.
+      $navbar.on('show.bs.collapse', function () {
+        $navbar.addClass('mobile-opened');
+      });
+
+      $navbar.on('hide.bs.collapse', function () {
+        $navbar.removeClass('mobile-opened');
+      });
+
+      $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        
+        // Make navbar shrink when scrolling down
+        if (scroll >= 100) {
+          $navbar.addClass('navbar-shrink');
+        } else {
+          $navbar.removeClass("navbar-shrink");
+        }
+      });
+    });
+  </script>
+<script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule defer></script></body>
+</html>

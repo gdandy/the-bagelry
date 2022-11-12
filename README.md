@@ -2,6 +2,15 @@
 
 This project is the source code for The Bagelry's web site in Evergreen Colorado.
 
+## Setup
+
+1. Install nvm by downloading nvm-setup.exe from web and insalling.
+1. Then install nvm 12: `nvm install 12`
+1. Use nvm 12: `nvm use 12.22.12` or whatever version it says was installed
+1. Install ng-cli: `npm i -g @angular/cli@9.1.9`
+1. Build: `ng s --o`
+1. Set PowerShell executtion policy if get an error running ng `Set-ExecutionPolicy -ExecutionPolicy
+
 ## Development server
 
 Run `ng s --o` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

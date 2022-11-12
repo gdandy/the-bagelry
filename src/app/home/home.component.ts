@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     this.carouselImages = [
       new ImageAlt('./assets/img/cs-1/sandwich-breakfast-14er.jpg', 'The 14er Breakfast Sandwich'),
       new ImageAlt('./assets/img/cs-1/the-bagelry-sign.jpg', 'The Bagelry'),
-      new ImageAlt('./assets/img/cs-1/drinks-dazbog-coffee.jpg', 'Proudly serving Dazbog Coffee'),
+      new ImageAlt('./assets/img/cs-1/pablos-coffee-store.jpg', 'Proudly serving Pablo\'s Coffee'),
       new ImageAlt('./assets/img/cs-1/bagel-mountain-power.jpg', 'The Mountain Power Bagel')
     ];
 
