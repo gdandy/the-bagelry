@@ -6,15 +6,16 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./address.component.scss']
 })
 export class AddressComponent implements OnInit {
-  @ViewChild('gmap', { static: true }) gmapElement: any;
-  map: google.maps.Map;
+  // @ViewChild('gmap', { static: true }) gmapElement: any;
+  // map: google.maps.Map;
 
   constructor() { }
 
   ngOnInit() {
-    this.initializeMap();
+    // this.initializeMap();
   }
 
+  /*
   initializeMap() {
     // Create a new StyledMapType object, passing it an array of styles,
     // and the name to be displayed on the map type control.
@@ -192,4 +193,5 @@ export class AddressComponent implements OnInit {
       }
     });
   }
+  */
 }
