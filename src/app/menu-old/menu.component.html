@@ -1,0 +1,73 @@
+<div class="masthead menu d-print-none">
+  <div class="container">
+    <div class="masthead-content">
+      <h4>The Goodness</h4>
+      <h1 class="text-uppercase">Get in my belly</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container d-print-none">
+  <div class="row mt-4">
+    <div class="col-3 pr-0 pr-md-3">
+      <div id="menuNav" class="list-group box-shadow">
+        <a class="list-group-item disabled menu-category-header">Menu</a>
+        <a *ngFor="let categoryName of allCategoryNames" class="list-group-item list-group-item-action list-group-item-primary" [class.active]="categoryName == activeCategoryName" href="#" (click)="setActive(categoryName)">
+           <small>{{ categoryName }}</small>
+        </a>
+      </div>
+    </div>
+    <div class="col-9 col-md-6" id="menuItems">
+      <div>
+        <a class="btn btn-primary btn-sm text-white box-shadow mb-2 mr-2" href="https://catering.orderspoon.com/the-bagelry" target="_blank">Donation Sandwich</a>
+        <a class="btn btn-danger btn-sm text-white box-shadow mb-2 mr-2" href="https://us.orderspoon.com/the-bagelry" target="_blank">Order for Pickup</a>
+        <a class="btn btn-success btn-sm text-white box-shadow mb-2" href="https://catering.orderspoon.com/the-bagelry" target="_blank">Order Catering</a>
+      </div>
+      <div *ngFor="let category of activeCategories">
+        <div *ngFor="let subCategory of category.subCategories" class="menu-subcategory">
+          <h5>{{ subCategory.name }}</h5>
+          <p *ngIf="subCategory.priceString" class="menu-subcategory-price">{{ subCategory.priceString }}</p>
+          <div *ngFor="let item of subCategory.items" class="menu-item">
+            <div class="menu-item-body">
+              <h4>{{ item.name }} <span *ngIf="item.price != null">${{ item.price }}</span></h4>
+              <p *ngIf="item.description">{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container d-none d-print-block mb-3">
+  <div class="row">
+    <div class="col-8">
+      <img src="./assets/img/logo/the-bagelry-md.jpg" />
+    </div>
+    <div class="col-4">
+      <p><strong>Hours:</strong><br />
+      MONDAY - SUNDAY 6AM - 4PM</p>
+      <p><strong>Address:</strong><br />
+      1242 Bergen Parkway<br />
+      Evergreen, CO 80439<br />
+      303-674-1413</p>
+    </div>
+  </div>
+</div>
+
+<div class="container d-none d-print-block">
+  <div class="row" *ngFor="let category of allCategories">
+    <div *ngFor="let subCategory of category.subCategories" class="menu-subcategory col-6" [class.page-break]="subCategory.shouldPageBreakBefore">
+      <h5>{{ subCategory.name }}</h5>
+      <p *ngIf="subCategory.priceString" class="menu-subcategory-price">{{ subCategory.priceString }}</p>
+      <div *ngFor="let item of subCategory.items" class="menu-item">
+        <div class="menu-item-body">
+          <h4>{{ item.name }}
+            <span *ngIf="item.price != null">${{ item.price }}</span>
+          </h4>
+          <p *ngIf="item.description">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

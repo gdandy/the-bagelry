@@ -17,11 +17,12 @@ export class HomeComponent implements OnInit {
     this.carouselImages = [
       new ImageAlt('./assets/img/cs-1/sandwich-breakfast-14er.jpg', 'The 14er Breakfast Sandwich'),
       new ImageAlt('./assets/img/cs-1/the-bagelry-sign.jpg', 'The Bagelry'),
-      new ImageAlt('./assets/img/cs-1/pablos-coffee-store.jpg', 'Proudly serving Pablo\'s Coffee'),
+      new ImageAlt('./assets/img/cs-1/pablos-coffee.jpg', 'Proudly serving Pablo\'s Coffee'),
       new ImageAlt('./assets/img/cs-1/bagel-mountain-power.jpg', 'The Mountain Power Bagel')
     ];
 
     this.allImageRollImages = [
+      new ImageAlt('./assets/img/img-roll/quotes-keep-calm.jpg'),
       new ImageAlt('./assets/img/img-roll/bagel-chocolate-chip.jpg'),
       new ImageAlt('./assets/img/img-roll/bagel-cinnamon-raisin.jpg'),
       new ImageAlt('./assets/img/img-roll/bagel-cranberry-walnut-2.jpg'),

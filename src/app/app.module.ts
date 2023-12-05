@@ -35,6 +35,7 @@ import { EventsComponent } from './events/events.component';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent, data: { state: 'home' } },
+      { path: 'menu', component: MenuComponent, data: { state: 'menu' } },
       { path: 'address', component: AddressComponent, data: { state: 'address' } },
       { path: 'local', component: LocalComponent, data: { state: 'local' } },
       { path: 'our-story', component: OurStoryComponent, data: { state: 'our-story' } },
